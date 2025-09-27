@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CHITTURI KIRAN CHANDRA | Portfolio Workshop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      background: #fff;
+      color: #222;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 980px;
+      margin: 42px auto;
+      background: #fff;
+      border-radius: 30px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.08);
+      padding: 40px 36px 28px 36px;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 7px solid #222;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.13);
+      background: #fff;
+    }
+    .profile-info h1 {
+      font-size: 2.45rem;
+      font-weight: 900;
+      color: #222;
+      margin-bottom: 7px;
+      letter-spacing: 2px;
+    }
+    .location {
+      font-size: 1.17rem;
+      color: #555;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+    .contact {
+      font-size: 1.08rem;
+      margin-bottom: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+    .contact a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 18px;
+      padding: 7px 18px;
+      background: linear-gradient(90deg,#1eafed,#67e8f9);
+      box-shadow: 0 2px 8px rgba(30,175,237,0.07);
+      transition: background 0.18s, color 0.18s;
+    }
+    .contact a:hover { background: linear-gradient(90deg,#67e8f9,#1eafed); color: #222;}
+    .summary {
+      font-size: 1.13rem;
+      color: #222;
+      margin-bottom: 12px;
+      line-height: 1.62;
+    }
+    .nav {
+      display: flex;
+      gap: 15px;
+      margin: 24px 0 0 0;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      color: #222;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: 18px;
+      padding: 8px 18px;
+      background: #f4f7fb;
+      transition: background 0.18s, color 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(30,175,237,0.07);
+    }
+    .nav a:hover {
+      background: #1eafed;
+      color: #fff;
+    }
+    .section {
+      margin-top: 38px;
+      margin-bottom: 24px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+      padding-bottom: 8px;
+      border: 1px solid #f4f7fb;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 18px 28px 8px 28px;
+      border-radius: 24px 24px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #f4f7fb;
+      color: #222;
+      border-bottom: 2px solid #eaf6ff;
+    }
+    .section-title i {
+      font-size: 1.5em;
+      padding: 10px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    .section-title.skills i {background: #ffd700; color: #222;}
+    .section-title.experience i {background: #1eafed; color: #fff;}
+    .section-title.achievements i {background: #ef4f4f; color: #fff;}
+    .section-title.education i {background: #5d9cec; color: #fff;}
+    .section-title.contact i {background: #67e8f9; color: #222;}
+    .section-content {
+      padding: 10px 28px 17px 38px;
+      font-size: 1.09rem;
+    }
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      margin: 10px 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .skills-list li {
+      color: #222;
+      background: #fff;
+      border: 2px solid #ffd700;
+      padding: 11px 20px;
+      border-radius: 30px;
+      font-weight: 500;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.09rem;
+    }
+    .skills-list li i {
+      font-size: 1.1em;
+      padding: 8px;
+      border-radius: 50%;
+      background: #ffd700;
+      color: #222;
+      box-shadow: 0 1px 5px rgba(255,215,0,0.11);
+    }
+    .exp-card {
+      background: #f4f7fb;
+      border-radius: 20px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(30,175,237,0.07);
+      border: 1px solid #eaf6ff;
+    }
+    .exp-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #1eafed;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .exp-title i {
+      font-size: 1.2em;
+      padding: 8px;
+      border-radius: 50%;
+      background: #1eafed;
+      color: #fff;
+    }
+    .exp-role {
+      font-weight: 600;
+      color: #ef4f4f;
+      margin-bottom: 5px;
+      font-size: 1.04rem;
+      font-style: italic;
+    }
+    .exp-date {
+      font-size: 0.98rem;
+      color: #555;
+      margin-bottom: 7px;
+      font-weight: 500;
+    }
+    .exp-points {
+      margin: 0 0 0 23px;
+      font-size: 1.06rem;
+      color: #222;
+      margin-bottom: 5px;
+      list-style: disc;
+    }
+    .achievements-list {
+      margin: 0 0 0 20px;
+      font-size: 1.09rem;
+      color: #ef4f4f;
+      list-style: none;
+      padding: 0;
+    }
+    .achievements-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .achievements-list li i {
+      font-size: 1.1em;
+      padding: 7px;
+      border-radius: 50%;
+      background: #ef4f4f;
+      color: #fff;
+    }
+    .edu-list {
+      margin: 0 0 0 20px;
+      font-size: 1.09rem;
+      color: #5d9cec;
+      list-style: none;
+      padding: 0;
+    }
+    .edu-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 7px;
+      font-weight: 500;
+    }
+    .edu-list li i {
+      font-size: 1.1em;
+      padding: 7px;
+      border-radius: 50%;
+      background: #5d9cec;
+      color: #fff;
+    }
+    .touch-section {
+      margin-top: 30px;
+      padding: 23px 0;
+      background: #f4f7fb;
+      color: #222;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(30,175,237,0.09);
+      border: 1px solid #eaf6ff;
+    }
+    .touch-section h3 {
+      font-size: 1.22rem;
+      margin-bottom: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #67e8f9;
+      color: #222;
+      border-radius: 18px;
+      padding: 10px 0;
+      width: fit-content;
+      margin: 0 auto 13px auto;
+    }
+    .touch-section h3 i {
+      font-size: 1.2em;
+      padding: 8px;
+      border-radius: 50%;
+      background: #fff;
+      color: #67e8f9;
+    }
+    .touch-links a {
+      display: inline-block;
+      margin: 0 9px;
+      color: #fff;
+      font-size: 1.13rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: linear-gradient(90deg,#67e8f9,#1eafed);
+      transition: background 0.2s, color 0.18s;
+      box-shadow: 0 2px 8px rgba(30,175,237,0.10);
+    }
+    .touch-links a:hover { background: linear-gradient(90deg,#1eafed,#67e8f9); color: #222;}
+    .github-link-main {
+      margin-top: 13px;
+      font-size: 1.13rem;
+      color: #1eafed;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #fff;
+      padding: 10px 22px;
+      border-radius: 30px;
+      transition: background 0.18s, color 0.18s;
+      box-shadow: 0 2px 8px rgba(30,175,237,0.07);
+      border: 2px solid #1eafed;
+    }
+    .github-link-main:hover { background: #1eafed; color: #fff;}
+    .copyright {
+      text-align: center;
+      color: #888;
+      font-size: 1.01rem;
+      padding: 18px 0 8px 0;
+      margin-top: 24px;
+      border-top: 1px solid #eaf6ff;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 12px 4px; }
+      .header { flex-direction: column; gap: 13px; }
+      .profile-photo { width: 80px; height: 80px; }
+      .profile-info h1 { font-size: 1.3rem; }
+      .section-title, .section-title.skills, .section-title.experience, .section-title.achievements, .section-title.education, .section-title.contact { padding: 10px 10px 4px 10px; font-size: 1rem;}
+      .section-content { padding: 0 10px 7px 13px; }
+      .exp-card { padding: 7px 5px; }
+      .skills-list li, .achievements-list li, .edu-list li { font-size: 1rem; }
+    }
+  </style>
+  <script>
+    function scrollToSection(section) {
+      document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+      <div class="profile-info">
+        <h1>CHITTURI KIRAN CHANDRA</h1>
+        <div class="location"><i class="fa-solid fa-location-dot" style="background:#ffd700;color:#222;"></i> Hyderabad, India 500004</div>
+        <div class="contact">
+          <a href="tel:9030205859"><i class="fa-solid fa-phone"></i> 9030205859</a>
+          <a href="mailto:chitturikiranchandra1@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/chitturi-kiran-chandra" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+        <div class="summary">
+          Organized and results-driven professional with experience in administration, auditing, and operations. Skilled in following Standard Operating Procedures (SOPs), conducting manual audits, resolving exceptions, and escalating issues systematically. Known for tracking performance metrics, improving workflows by up to 40%, and delivering timely, high-quality outputs in fast-paced environments. Proficient in Excel and familiar with SQL, with a proven ability to collaborate globally and meet SLAs, CLAs, productivity, quality, and utilization benchmarks.
+        </div>
+        <div class="nav">
+          <a href="javascript:void(0)" onclick="scrollToSection('skills')"><i class="fa-solid fa-gears" style="color:#ffd700;"></i> Skills</a>
+          <a href="javascript:void(0)" onclick="scrollToSection('experience')"><i class="fa-solid fa-briefcase" style="color:#1eafed;"></i> Experience</a>
+          <a href="javascript:void(0)" onclick="scrollToSection('achievements')"><i class="fa-solid fa-trophy" style="color:#ef4f4f;"></i> Achievements</a>
+          <a href="javascript:void(0)" onclick="scrollToSection('education')"><i class="fa-solid fa-graduation-cap" style="color:#5d9cec;"></i> Education</a>
+          <a href="javascript:void(0)" onclick="scrollToSection('touch')"><i class="fa-solid fa-envelope" style="color:#67e8f9;"></i> Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="skills">
+      <div class="section-title skills"><i class="fa-solid fa-gears"></i>  Skills</div>
+      <div class="section-content">
+        <ul class="skills-list">
+          <li><i class="fa-solid fa-file-lines"></i> SOP Compliance & Manual Audits</li>
+          <li><i class="fa-solid fa-bug"></i> Exception Resolution & Escalation</li>
+          <li><i class="fa-solid fa-handshake"></i> Stakeholder Communication & Reporting</li>
+          <li><i class="fa-solid fa-comments"></i> Customer Feedback Analysis & Transcription</li>
+          <li><i class="fa-solid fa-chart-line"></i> Performance Metrics Tracking & SLA Compliance</li>
+          <li><i class="fa-solid fa-arrow-trend-up"></i> Process Improvements (Efficiency ↑ 20–40%)</li>
+          <li><i class="fa-solid fa-table"></i> MS Excel (Advanced), SQL (Beginner)</li>
+          <li><i class="fa-solid fa-users"></i> Global Collaboration & Flexible Shift Operations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section" id="experience">
+      <div class="section-title experience"><i class="fa-solid fa-briefcase"></i> Professional Experience</div>
+      <div class="section-content">
+        <div class="exp-card">
+          <div class="exp-title"><i class="fa-solid fa-building"></i> GAR CORPORATION PVT LTD – Hyderabad, India</div>
+          <div class="exp-role">Administration Executive</div>
+          <div class="exp-date"><i class="fa-solid fa-calendar-days"></i> Apr 2024 – Present</div>
+          <ul>
+            <li class="exp-points">Follow SOPs to perform manual audits, identify outliers, and resolve exceptions using internal tools, improving turnaround speed by 30%.</li>
+            <li class="exp-points">Conduct data checks, prepare analytical reports, and escalate issues systematically to relevant teams, improving resolution time by 25%.</li>
+            <li class="exp-points">Listen to customer feedback, transcribe inputs, and provide actionable recommendations to improve processes by 20%.</li>
+            <li class="exp-points">Maintain accurate records of day-to-day work using trackers and workflow tools, ensuring 100% compliance with SLAs.</li>
+            <li class="exp-points">Identify emerging patterns from audits and contribute to process/program improvements that boosted operational efficiency by 35%.</li>
+            <li class="exp-points">Consistently meet business metrics including SLA, productivity, quality, and utilization benchmarks.</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <div class="exp-title"><i class="fa-solid fa-building"></i> ELLAA RESIDENCES – Hyderabad, India</div>
+          <div class="exp-role">Front Office Executive</div>
+          <div class="exp-date"><i class="fa-solid fa-calendar-days"></i> Jun 2023 – Apr 2024</div>
+          <ul>
+            <li class="exp-points">Increased hotel reservation bookings by 20–40% through improved guest handling and customer engagement.</li>
+            <li class="exp-points">Enhanced front-office work efficiency by 30% by streamlining reporting and service processes.</li>
+            <li class="exp-points">Coordinated management schedules and daily operations, improving overall operational efficiency by 25%.</li>
+            <li class="exp-points">Trained and supervised front-office staff, raising professionalism and teamwork efficiency by 30%.</li>
+            <li class="exp-points">Maintained confidential records with 100% accuracy, ensuring compliance and discretion.</li>
+            <li class="exp-points">Recognized as Best Employee of the Month (2024) for achieving a 20% improvement in operations.</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <div class="exp-title"><i class="fa-solid fa-building"></i> ABODE HOTEL – Hyderabad, India</div>
+          <div class="exp-role">Front Office Executive</div>
+          <div class="exp-date"><i class="fa-solid fa-calendar-days"></i> Nov 2022 – Jun 2023</div>
+          <ul>
+            <li class="exp-points">Enhanced guest satisfaction scores by 20% through improved guest relations.</li>
+            <li class="exp-points">Improved decision-making speed by 25% by compiling detailed reports.</li>
+            <li class="exp-points">Increased service efficiency by 30% through optimized housekeeping allocations.</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <div class="exp-title"><i class="fa-solid fa-building"></i> THE CAPITAL HOTEL – Guntur, India</div>
+          <div class="exp-role">Front Office Assistant</div>
+          <div class="exp-date"><i class="fa-solid fa-calendar-days"></i> Apr 2019 – Aug 2022</div>
+          <ul>
+            <li class="exp-points">Improved guest check-in/check-out efficiency by 25%.</li>
+            <li class="exp-points">Achieved a 95% first-contact resolution rate for billing queries and complaints.</li>
+            <li class="exp-points">Honoured with Best Employee of the Year (2022) for outstanding service excellence.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="achievements">
+      <div class="section-title achievements"><i class="fa-solid fa-trophy"></i> Key Achievements</div>
+      <div class="section-content">
+        <ul class="achievements-list">
+          <li><i class="fa-solid fa-check-circle"></i> Boosted operational efficiency by up to 40% across multiple roles through process improvements.</li>
+          <li><i class="fa-solid fa-check-circle"></i> Improved client satisfaction scores by 20–40% through better engagement and issue resolution.</li>
+          <li><i class="fa-solid fa-check-circle"></i> Recognized with multiple Best Employee Awards for consistently exceeding performance benchmarks.</li>
+          <li><i class="fa-solid fa-check-circle"></i> Implemented performance tracking systems that increased reporting accuracy by 40%.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section" id="education">
+      <div class="section-title education"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+      <div class="section-content">
+        <ul class="edu-list">
+          <li><i class="fa-solid fa-school"></i> B.Sc. Computer Science – Pursuing | Andhra University, Visakhapatnam | 2024</li>
+          <li><i class="fa-solid fa-school"></i> Diploma in Air Hostess & Hotel Management (Tours & Travel) | Frankfinn Institute, Visakhapatnam | 2019</li>
+          <li><i class="fa-solid fa-school"></i> Intermediate (MPC) | NRI Junior College, Guntur | 2019</li>
+          <li><i class="fa-solid fa-school"></i> SSC | GKR Public School, Guntur | 2016</li>
+        </ul>
+      </div>
+    </div>
+    <div class="touch-section" id="touch">
+      <h3 class="section-title contact"><i class="fa-solid fa-envelope"></i> Get in Touch</h3>
+      <div class="touch-links">
+        <a href="mailto:chitturikiranchandra1@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="tel:9030205859"><i class="fa-solid fa-phone"></i> Call</a>
+        <a href="https://www.linkedin.com/in/chitturi-kiran-chandra" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+      <a class="github-link-main" href="https://github.com/chkiranchandra/CHITTURI-KIRAN-CHANDRA" target="_blank">
+        <i class="fa-brands fa-github"></i> View My GitHub Portfolio
+      </a>
+      <div style="margin-top:13px;font-size:1.07rem;">
+        <span>I'm open to new opportunities and collaborations. Feel free to reach out!</span>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 CHITTURI KIRAN CHANDRA. All rights reserved. Portfolio website powered by GitHub Pages.
+    </div>
+  </div>
+</body>
+</html>
